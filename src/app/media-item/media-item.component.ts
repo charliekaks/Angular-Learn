@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-media-item',
@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./media-item.component.css']
 })
 export class MediaItemComponent {
-  name = "Avengers: Endgame"
+  @Input() mediaItem;
+  @Output() favorite = new EventEmitter();
+
+  onFavorite(){
+    this.favorite.emit(this.mediaItem);
+  }
   watchTrailer(){
     console.log("Watching trailer")
   }
