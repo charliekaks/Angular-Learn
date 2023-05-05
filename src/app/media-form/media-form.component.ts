@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-media-form',
@@ -11,11 +11,24 @@ export class MediaFormComponent implements OnInit {
  
   ngOnInit(): void {
       this.myForm = new FormGroup({
-        name: new FormControl(''),
+        name: new FormControl('', Validators.compose([
+          Validators.required
+        ])),
         medium: new FormControl('Movies'),
-        rating: new FormControl(''),
-        description: new FormControl('')
+        rating: new FormControl('', Validators.compose([
+          Validators.required, this.ratingValid
+        ])),
+        description: new FormControl(''),
       })
+  }
+
+  ratingValid(control: AbstractControl) : { [key: string]: boolean } | null { 
+    let checkRating = parseInt(control.value);
+    if(checkRating >=0 && checkRating<=10){
+      return null;
+    }else{
+      return { rating : true}
+    }
   }
   onSubmit(mediaItem){
     console.log(mediaItem)

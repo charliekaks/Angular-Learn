@@ -23,6 +23,6 @@ action="">
         <label for="exampleFormControlTextarea1" class="form-label">Description</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" formControlName="description"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
 </form>
 
