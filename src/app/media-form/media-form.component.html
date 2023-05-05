@@ -1,0 +1,28 @@
+<form #formMediaItem="ngForm" 
+(ngSubmit)="onSubmit(formMediaItem.value)"
+action="">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="name" name="name" class="form-control" id="exampleFormControlInput1" placeholder="name" ngModel>
+      </div>
+      <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupSelect01">Medium</label>
+      <select name="medium" class="form-select" id="inputGroupSelect01" ngModel>
+        <option selected>Choose...</option>
+        <option value="1">Series</option>
+        <option value="2">Movies</option>
+        <option value="3">Anime</option>
+      </select>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Rating</span>
+        <input type="text" class="form-control" aria-label="Value of 1 to 10" name="rating" ngModel>
+        <span class="input-group-text">/10</span>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" ngModel></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
