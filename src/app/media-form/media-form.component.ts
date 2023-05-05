@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { MediaItemService } from '../media-item.service';
 
 @Component({
   selector: 'app-media-form',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from
 })
 export class MediaFormComponent implements OnInit {
   myForm: FormGroup;
- 
+  constructor(private mediaItemService: MediaItemService){}
   ngOnInit(): void {
       this.myForm = new FormGroup({
         name: new FormControl('', Validators.compose([
@@ -31,6 +32,6 @@ export class MediaFormComponent implements OnInit {
     }
   }
   onSubmit(mediaItem){
-    console.log(mediaItem)
+    this.mediaItemService.add(mediaItem);
   }
 }

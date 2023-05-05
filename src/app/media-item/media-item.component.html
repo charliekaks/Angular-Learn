@@ -5,10 +5,10 @@
           <h5 class="card-title">{{mediaItem.name}}</h5>
           <p class="card-text">{{mediaItem.description}}</p>
           <a href="#"type="button" class="btn btn-primary" (click)="watchTrailer()">Trailer</a>
-          <a href="#"type="button" class="btn btn-danger">Favorite</a>
+          <a href="#"type="button" class="btn btn-danger" (click)="onDelete()">Delete</a>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"> Watched On - {{mediaItem.watchedOn}}</li>
+            <li class="list-group-item"> Medium - {{mediaItem.watchedOn}}</li>
             <li class="list-group-item">Rating - {{mediaItem.rating}}</li>
           </ul>
       </div>

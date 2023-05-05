@@ -7,10 +7,10 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 })
 export class MediaItemComponent {
   @Input() mediaItem;
-  @Output() favorite = new EventEmitter();
+  @Output() delete = new EventEmitter();
 
-  onFavorite(){
-    this.favorite.emit(this.mediaItem);
+  onDelete(){
+    this.delete.emit(this.mediaItem);
   }
   watchTrailer(){
     console.log("Watching trailer")
