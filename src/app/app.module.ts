@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,7 +20,8 @@ import { MediaFormComponent } from './media-form/media-form.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
