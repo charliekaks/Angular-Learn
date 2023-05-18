@@ -12,6 +12,7 @@ export class SecurityService {
   constructor() { }
   login(entity:AppUser) : Observable<AppUserAuth> {
     this.securityObject.userName = entity.userName;
+    
 
     switch (entity.userName.toLowerCase()) {
       case "charles":
