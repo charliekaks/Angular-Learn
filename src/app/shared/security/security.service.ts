@@ -11,11 +11,12 @@ export class SecurityService {
   securityObject: AppUserAuth = new AppUserAuth();
   constructor() { }
   login(entity:AppUser) : Observable<AppUserAuth> {
+    this.securityObject.email = entity.email;
     this.securityObject.userName = entity.userName;
     
 
-    switch (entity.userName.toLowerCase()) {
-      case "charles":
+    switch (entity.email.toLowerCase()) {
+      case "charles@ch.com":
         this.securityObject.isAuthenticated = true;
         this.securityObject.canAccessMovies = true;
         this.securityObject.canAddMovies = true;

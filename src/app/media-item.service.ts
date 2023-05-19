@@ -52,6 +52,7 @@ get(){
   return this.mediaItems;
 }
 add(mediaItem){
+  console.log(this.mediaItems)
   this.mediaItems.push(mediaItem)
 }
 delete(mediaItem){
