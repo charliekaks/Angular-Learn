@@ -13,4 +13,9 @@ export class AppUserAuth extends UserAuth{
         this.canEditMovies = false;
         this.canDeleteMovies = false;
     }
+
+    getClaimProperty(obj:any,key:any): boolean{
+        let status = obj[key];
+        return status;
+    }
 }

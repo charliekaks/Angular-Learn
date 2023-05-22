@@ -2,7 +2,7 @@ export class UserAuth{
     userName: String  = '';
     email: String = '';
     bearerToken: String = '';
-    isAuthenticated:Boolean = false;
+    isAuthenticated:boolean = false;
 
     init() :void{
         this.userName = "";
