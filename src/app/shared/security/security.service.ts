@@ -22,7 +22,7 @@ export class SecurityService {
         this.securityObject.canAddMovies = true;
         this.securityObject.canEditMovies = true;
         break;
-      case "kevin":
+      case "kevin@ch.com":
         this.securityObject.isAuthenticated = true;
         break;
     
