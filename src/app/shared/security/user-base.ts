@@ -1,5 +1,6 @@
 export class UserBase{
-    userd?: number = 0;
+    userId?: number = 0;
+    _id?: number = 0;
     firstName: String = '';
     lastName: String = '';
     userName: String = '';
