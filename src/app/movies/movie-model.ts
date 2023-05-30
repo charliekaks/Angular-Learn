@@ -1,3 +1,8 @@
 export class Movie{
-    id: number; name: string; trailerLink: string; description: string; medium: string; rating: string 
+    _id: string; 
+    name: string; 
+    trailerLink: string; 
+    description: string; 
+    medium: string; 
+    rating: string 
 }

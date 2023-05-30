@@ -12,7 +12,7 @@ export class MediaListComponent implements OnInit {
   isloading : boolean = true;
   constructor(private mediaItemService: MediaItemService){}
   ngOnInit(): void {
-     this.mediaItemService.get().subscribe( items => {
+     this.mediaItemService.getMovies().subscribe( items => {
         this.mediaItems = items;
         this.isloading = false;
         console.log("updated array", this.mediaItems)

@@ -1,0 +1,14 @@
+<div class="card mb-3" *ngIf="!isloading">
+    <img src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-584655766.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <a routerLink="/movie/{{mediaItem._id}}" ><h5 class="card-title">{{mediaItem.name}}</h5></a> 
+        <p class="card-text">{{mediaItem.description.length > 250 ? mediaItem.description.substring(0,227).concat('...')  : mediaItem.description}}</p>
+        <a href="#"type="button" class="btn btn-primary" (click)="watchTrailer()">Trailer</a>
+        <a href="#"type="button" class="btn btn-danger" (click)="onDelete()">Delete</a>
+      </div>
+
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item"> Medium - {{mediaItem.medium}}</li>
+          <li class="list-group-item">Rating - {{mediaItem.rating}}</li>
+        </ul>
+</div>

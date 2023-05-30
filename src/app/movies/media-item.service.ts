@@ -59,13 +59,22 @@ apiUrl:string = 'http://localhost:3000/api/v1/movies';
 movies: Array<Movie>;
 constructor(private http: HttpClient) { }
 
-get() : Observable<Movie[]>{
+getMovies() : Observable<Movie[]>{
 return this.http.get<Movie[]>(this.apiUrl,
   httpOptions).pipe(
     catchError(error => {
-      console.error('Error occurred during POST request', error);
+      console.error('Error occurred during Get request', error);
       // Handle any errors here
       return of(error); // Return an Observable with the error to continue the error flow
+    })
+  )
+}
+
+getMovie(id) : Observable<Movie>{
+  return this.http.get<Movie>(this.apiUrl + `/${id}`,httpOptions).pipe(
+    catchError(error =>{
+      console.error('Error occurred during Get request', error);
+      return of(error)
     })
   )
 }

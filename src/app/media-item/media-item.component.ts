@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { Movie } from '../movies/movie-model';
+import { MediaItemService } from '../movies/media-item.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-media-item',
@@ -9,6 +11,9 @@ import { Movie } from '../movies/movie-model';
 export class MediaItemComponent {
   @Input() mediaItem : Movie;
   @Output() delete = new EventEmitter();
+
+
+
 
   onDelete(){
     this.delete.emit(this.mediaItem);

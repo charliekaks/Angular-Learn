@@ -12,6 +12,7 @@ import { MediaFormComponent } from './media-form/media-form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpInterceptorProviders } from './shared/http-intercepters/interceptor-providers';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpInterceptorProviders } from './shared/http-intercepters/interceptor
     MediaFormComponent,
     LoginComponent,
     RegisterComponent,
+    MovieDetailsComponent,
    
   ],
   imports: [
