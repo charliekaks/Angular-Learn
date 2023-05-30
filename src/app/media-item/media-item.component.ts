@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { Movie } from '../movies/movie-model';
 
 @Component({
   selector: 'app-media-item',
@@ -6,7 +7,7 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./media-item.component.css']
 })
 export class MediaItemComponent {
-  @Input() mediaItem;
+  @Input() mediaItem : Movie;
   @Output() delete = new EventEmitter();
 
   onDelete(){

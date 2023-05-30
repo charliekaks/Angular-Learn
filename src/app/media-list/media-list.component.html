@@ -1,6 +1,6 @@
-<div class="card-group">
+<div class="card-group" *ngIf="!isloading">
     <app-media-item *ngFor="let mediaItem of mediaItems"
-(delete)="onDeleteMediaItem($event)"
-[mediaItem]="mediaItem"></app-media-item>
+    (delete)="onDeleteMediaItem($event)"
+    [mediaItem]="mediaItem"></app-media-item>
 
 </div>

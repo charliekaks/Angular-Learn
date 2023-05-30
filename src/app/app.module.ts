@@ -11,6 +11,7 @@ import { MediaListComponent } from './media-list/media-list.component';
 import { MediaFormComponent } from './media-form/media-form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HttpInterceptorProviders } from './shared/http-intercepters/interceptor-providers';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegisterComponent } from './register/register.component';
     MediaListComponent,
     MediaFormComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     routing
   ],
-  providers: [],
+  providers: [  HttpInterceptorProviders ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

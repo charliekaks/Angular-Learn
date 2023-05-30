@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
-import { MediaItemService } from '../media-item.service';
+import { MediaItemService } from '../movies/media-item.service';
+import { Movie } from '../movies/movie-model';
 
 @Component({
   selector: 'app-media-list',
@@ -7,10 +8,15 @@ import { MediaItemService } from '../media-item.service';
   styleUrls: ['./media-list.component.css']
 })
 export class MediaListComponent implements OnInit {
-  mediaItems : Array<{ id: number, name: string, trailerLink: string, description: string, medium: string, rating: string }>;
+  mediaItems : Movie[];
+  isloading : boolean = true;
   constructor(private mediaItemService: MediaItemService){}
   ngOnInit(): void {
-     this.mediaItems = this.mediaItemService.get()
+     this.mediaItemService.get().subscribe( items => {
+        this.mediaItems = items;
+        this.isloading = false;
+        console.log("updated array", this.mediaItems)
+     })
   }
   onDeleteMediaItem(mediaItem){
     this.mediaItemService.delete(mediaItem);
