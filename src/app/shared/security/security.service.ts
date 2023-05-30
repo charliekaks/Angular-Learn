@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders} from '@angular/common/http'
 import { AppUser } from 'src/app/security/app-user';
 import { AppUserAuth } from 'src/app/security/app-user-auth';
 
-const API_ENDPOINT = '/security'
 const httpOptions = {
   headers:new HttpHeaders({
     'Content-type': 'application/json'
