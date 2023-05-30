@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { MediaItemService } from '../movies/media-item.service';
+import { Movie } from '../movies/movie-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-media-form',
@@ -9,7 +11,7 @@ import { MediaItemService } from '../movies/media-item.service';
 })
 export class MediaFormComponent implements OnInit {
   myForm: FormGroup;
-  constructor(private mediaItemService: MediaItemService){}
+  constructor(private mediaItemService: MediaItemService, private router: Router){}
   ngOnInit(): void {
       this.myForm = new FormGroup({
         name: new FormControl('', Validators.compose([
@@ -31,7 +33,12 @@ export class MediaFormComponent implements OnInit {
       return { rating : true}
     }
   }
-  onSubmit(mediaItem){
-    this.mediaItemService.add(mediaItem);
+  onSubmit(mediaItem : Movie){
+    this.mediaItemService.addMovie(mediaItem).subscribe(
+      resp => {
+        console.log(resp)
+        this.router.navigateByUrl('/list');
+      }
+    );
   }
 }

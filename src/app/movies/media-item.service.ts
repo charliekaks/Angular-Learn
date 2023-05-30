@@ -78,9 +78,13 @@ getMovie(id) : Observable<Movie>{
     })
   )
 }
-add(mediaItem){
-  console.log(this.mediaItems)
-  this.mediaItems.push(mediaItem)
+addMovie(mediaItem : Movie){
+  return this.http.post<Movie>(this.apiUrl, mediaItem, httpOptions).pipe(
+  catchError(error => {
+    console.log(error)
+    return of(error)
+  })    
+  )
 }
 delete(mediaItem){
 
