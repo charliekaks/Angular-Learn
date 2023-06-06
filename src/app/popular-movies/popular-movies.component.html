@@ -1,21 +1,16 @@
-<div class="list" ngIf="isLoading" *ngFor="let movie of Movies">
-  <div class="col">
-    <div class="card text-center" style="width: 18rem;">
-      <img class="card-img-top"
-        src="https://image.tmdb.org/t/p/w500/{{movie.img_path}}"
-        alt="Card image cap">
-      <div class="card-body">
-        <a routerLink="/movie/{{movie.id}}">
-          <h5 class="card-title">{{movie.title}}</h5>
-        </a>
-        <p class="card-text">{{movie.description}}</p>
-      </div>
-  
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"> Release Date - {{movie.date}} </li>
-        <li class="list-group-item">Rating - {{movie.rating}} </li>
-      </ul>
+<div class="col">
+  <div class="card text-center" style="width: 18rem;">
+    <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{movie.img_path}}" alt="Card image cap">
+    <div class="card-body">
+      <a routerLink="/movie/{{movie.id}}">
+        <h5 class="card-title">{{movie.title}}</h5>
+      </a>
+      <p class="card-text">{{movie.description}}</p>
     </div>
-  </div>
 
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> Release Date - {{movie.date}} </li>
+      <li class="list-group-item">Rating - {{movie.rating}} </li>
+    </ul>
+  </div>
 </div>

@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class MoviesService {
 
-  apiUrl:string = 'http://localhost:3000/api/v1/feedf';
+  apiUrl:string = 'http://localhost:3000/api/v1/feed';
   movies: Array<MovieApi>;
   constructor(private http: HttpClient) { }
 

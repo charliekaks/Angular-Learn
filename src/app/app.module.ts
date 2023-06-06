@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { HttpInterceptorProviders } from './shared/http-intercepters/interceptor-providers';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { PopularMoviesComponent } from './popular-movies/popular-movies.component';
+import { PopularMovieListComponent } from './popular-movie-list/popular-movie-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PopularMoviesComponent } from './popular-movies/popular-movies.componen
     RegisterComponent,
     MovieDetailsComponent,
     PopularMoviesComponent,
+    PopularMovieListComponent,
    
   ],
   imports: [
