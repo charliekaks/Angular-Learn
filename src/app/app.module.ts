@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpInterceptorProviders } from './shared/http-intercepters/interceptor-providers';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { PopularMoviesComponent } from './popular-movies/popular-movies.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     LoginComponent,
     RegisterComponent,
     MovieDetailsComponent,
+    PopularMoviesComponent,
    
   ],
   imports: [
